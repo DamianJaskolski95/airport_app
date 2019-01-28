@@ -1,0 +1,7 @@
+<h1>Editing Payment</h1>
+<% if current_user.us_role == 2 %>
+  <%= render 'form', payment: @payment %>
+
+  <%= link_to 'Show', @payment %> |
+  <%= link_to 'Back', payments_path %>
+<% end %>

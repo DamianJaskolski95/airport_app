@@ -1,0 +1,9 @@
+<h1>Editing User</h1>
+
+<% if current_user.us_role == 2 %>
+  <%= render 'form', user: @user %>
+  <%= link_to 'Back', user_path(@user.id) %>
+<% elsif current_user.us_role == 1 and current_user.id == @user.id %>
+  <%= render 'form', user: @user %>
+  <%= link_to 'Back', user_path(current_user.id) %>
+<% end %>

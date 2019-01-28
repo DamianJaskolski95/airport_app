@@ -1,0 +1,7 @@
+<h1>New Airport</h1>
+
+<% if current_user.us_role == 2 %>
+  <%= render 'form', airport: @airport %>
+
+  <%= link_to 'Back', airports_path %>
+<%end%>

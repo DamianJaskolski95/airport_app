@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<% if current_user.us_role == 2 %>
+
+  <font size ="+1">Reservation ID: <%= @reservation.id %></font>
+  <hr>
+  <font size ="+3">AIRPLANE SECTION</font>
+  <br>
+  <font size ="+2">Airplane ID: <%= link_to @reservation.flight.airplane_id, @reservation.flight.airplane %></font>
+  <br>
+  <font size ="+1">Airlanes: <%= @reservation.flight.airplane.airlines %></font>
+  <br>
+  <font size ="+1">Airplane model: <%= @reservation.flight.airplane.model %></font>
+  <br>
+  <font size ="+1">Airplane capacity: <%= @reservation.flight.airplane.capacity %></font>
+  <hr>
+
+  <font size ="+3">AIRPORTS SECTION</font>
+  <br>
+  <font size ="+2">Source airport ID: <%= link_to @reservation.flight.airport_source_id, @reservation.flight.airport_source %></font>
+  <br>
+  <font size ="+1">City: <%= @reservation.flight.airport_source.city %></font>
+  <br>
+  <font size ="+1">Country: <%= @reservation.flight.airport_source.country %></font>
+  <br>
+  <font size ="+2">Destination airport ID: <%= link_to @reservation.flight.airport_dest_id, @reservation.flight.airport_dest %></font>
+  <br>
+  <font size ="+1">City: <%= @reservation.flight.airport_dest.city %></font>
+  <br>
+  <font size ="+1">Country: <%= @reservation.flight.airport_dest.country %></font>
+  <hr>
+
+  <font size ="+3">PAYMENT SECTION</font>
+  <br>
+  <font size ="+2">Payment ID: <%= link_to @reservation.flight.payment_id, @reservation.flight.payment %></font>
+  <br>
+  <font size ="+1">Cost: <%= @reservation.flight.payment.flight_cost %></font>
+  <br>
+  <font size ="+1">Currency: <%= @reservation.flight.payment.currency %></font>
+
+  <hr>
+  <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+  <%= link_to 'Back', reservations_path %>
+<%end%>

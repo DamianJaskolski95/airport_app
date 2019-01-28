@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<% if current_user.us_role == 2 %>
+  <table>
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>City</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @airport.country %></td>
+        <td><%= @airport.city %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to 'Edit', edit_airport_path(@airport) %> |
+  <%= link_to 'Back', airports_path %>
+<%end%>

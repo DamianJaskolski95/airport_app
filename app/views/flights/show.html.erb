@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<% if current_user.us_role == 2 %>
+
+  <font size ="+1">Flight ID: <%= @flight.id %></font>
+  <hr>
+  <font size ="+3">AIRPLANE SECTION</font>
+  <br>
+  <font size ="+2">Airplane ID: <%= link_to @flight.airplane_id, @flight.airplane %></font>
+  <br>
+  <font size ="+1">Airlanes: <%= @flight.airplane.airlines %></font>
+  <br>
+  <font size ="+1">Airplane model: <%= @flight.airplane.model %></font>
+  <br>
+  <font size ="+1">Airplane capacity: <%= @flight.airplane.capacity %></font>
+  <hr>
+
+  <font size ="+3">AIRPORTS SECTION</font>
+  <br>
+  <font size ="+2">Source airport ID: <%= link_to @flight.airport_source_id, @flight.airport_source %></font>
+  <br>
+  <font size ="+1">City: <%= @flight.airport_source.city %></font>
+  <br>
+  <font size ="+1">Country: <%= @flight.airport_source.country %></font>
+  <br>
+  <font size ="+2">Destination airport ID: <%= link_to @flight.airport_dest_id, @flight.airport_dest %></font>
+  <br>
+  <font size ="+1">City: <%= @flight.airport_dest.city %></font>
+  <br>
+  <font size ="+1">Country: <%= @flight.airport_dest.country %></font>
+  <hr>
+
+  <font size ="+3">PAYMENT SECTION</font>
+  <br>
+  <font size ="+2">Payment ID: <%= link_to @flight.payment_id, @flight.payment %></font>
+  <br>
+  <font size ="+1">Cost: <%= @flight.payment.flight_cost %></font>
+  <br>
+  <font size ="+1">Currency: <%= @flight.payment.currency %></font>
+
+
+  <hr>
+  <%= link_to 'Edit', edit_flight_path(@flight) %> |
+  <%= link_to 'Back', flights_path %>
+<%end%>

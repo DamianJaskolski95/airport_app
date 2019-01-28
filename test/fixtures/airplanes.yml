@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  linie_lotnicze: MyText
+  model: MyText
+  pojemnosc: 
+
+two:
+  linie_lotnicze: MyText
+  model: MyText
+  pojemnosc: 

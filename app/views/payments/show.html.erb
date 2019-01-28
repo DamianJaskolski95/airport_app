@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<% if current_user.us_role == 2 %>
+  <table>
+    <thead>
+      <tr>
+        <th>Cost</th>
+        <th>Currency</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @payment.flight_cost %></td>
+        <td><%= @payment.currency %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to 'Edit', edit_payment_path(@payment) %> |
+  <%= link_to 'Back', payments_path %>
+<%end%>

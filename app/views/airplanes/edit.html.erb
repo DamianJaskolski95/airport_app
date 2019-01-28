@@ -1,0 +1,8 @@
+<h1>Editing Airplane</h1>
+
+<% if current_user.us_role == 2 %>
+  <%= render 'form', airplane: @airplane %>
+
+  <%= link_to 'Show', @airplane %> |
+  <%= link_to 'Back', airplanes_path %>
+<% end %>

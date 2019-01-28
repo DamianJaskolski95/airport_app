@@ -1,0 +1,7 @@
+<h1>New Airplane</h1>
+
+<% if current_user.us_role == 2 %>
+  <%= render 'form', airplane: @airplane %>
+
+  <%= link_to 'Back', airplanes_path %>
+<%end%>

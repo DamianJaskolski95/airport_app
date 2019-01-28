@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<% if current_user.us_role == 2 %>
+  <table>
+    <thead>
+      <tr>
+        <th>Airlines</th>
+        <th>Model</th>
+        <th>Capacity</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @airplane.airlines %></td>
+        <td><%= @airplane.model %></td>
+        <td><%= @airplane.capacity %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to 'Edit', edit_airplane_path(@airplane) %> |
+  <%= link_to 'Back', airplanes_path %>
+<%end%>

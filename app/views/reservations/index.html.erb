@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reservations</h1>
+
+<%= form_tag(reservations_path, method: :get) do %>
+  Flight ID <%= text_field_tag :flight_id, params[:flight_id] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+<% if current_user.us_role == 2 %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Flight ID</th>
+        <th>User ID</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <td><%= link_to reservation.id, reservation %></td>
+          <td><%= link_to reservation.flight_id, reservation.flight %></td>
+          <td><%= link_to reservation.user_id, reservation.user %></td>
+          <td><%= link_to 'Show', reservation %></td>
+          <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+          <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Reservation', new_reservation_path %>
+<%end%>
