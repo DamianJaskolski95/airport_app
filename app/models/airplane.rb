@@ -1,5 +1,5 @@
 class Airplane < ApplicationRecord
-  has_many :flights, dependent: :delete_all
+  has_many :flights, dependent: :destroy
 
   MODEL_FORMAT = /\A([\w]+[\-]*){4,40}\z/
   validates :model, presence: true, format: {with: MODEL_FORMAT, message: "wrong format"}, uniqueness: true

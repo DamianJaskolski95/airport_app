@@ -62,7 +62,7 @@ class UsersController < ApplicationController
   def destroy
     #@user.destroy
     respond_to do |format|
-      if current_user.us_rola == 2
+      if current_user.us_role == 2
         if @user.destroy
           format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
           format.json { head :no_content }

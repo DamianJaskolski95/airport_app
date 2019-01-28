@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :reservations, dependent: :delete_all
+  has_many :reservations, dependent: :destroy
 
   NAME_FORMAT = /\A[A-Z]{1}[a-z]{2,40}\z/
   validates :name, presence: true, format: { with: NAME_FORMAT, message: "only allows letters" }

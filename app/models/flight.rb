@@ -6,6 +6,6 @@ class Flight < ApplicationRecord
   belongs_to :airport_dest, :class_name => 'Airport'
   has_many :airports
 
-  has_many :reservations, dependent: :delete_all
+  has_many :reservations, dependent: :destroy
 
 end
