@@ -4,7 +4,8 @@ class AirplanesController < ApplicationController
   # GET /airplanes
   # GET /airplanes.json
   def index
-    @airplanes = Airplane.all
+    #@airplanes = Airplane.all
+    @airplanes = Airplane.page(params[:page]).per(15)
   end
 
   # GET /airplanes/1

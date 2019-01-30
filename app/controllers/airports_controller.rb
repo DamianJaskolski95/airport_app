@@ -4,7 +4,8 @@ class AirportsController < ApplicationController
   # GET /airports
   # GET /airports.json
   def index
-    @airports = Airport.all
+    #@airports = Airport.all
+    @airports = Airport.page(params[:page]).per(15)
   end
 
   # GET /airports/1
@@ -25,7 +26,7 @@ class AirportsController < ApplicationController
   # POST /airports.json
   def create
     @airport = Airport.new(airport_params)
-    
+
     respond_to do |format|
       if @airport.save
         format.html { redirect_to @airport, notice: 'Airport was successfully created.' }

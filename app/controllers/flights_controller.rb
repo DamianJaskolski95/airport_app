@@ -4,7 +4,8 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    @flights = Flight.all
+    #@flights = Flight.all
+    @flights = Flight.page(params[:page]).per(15)
   end
 
   # GET /flights/1

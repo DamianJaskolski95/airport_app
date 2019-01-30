@@ -5,9 +5,10 @@ class ReservationsController < ApplicationController
   # GET /reservations.json
   def index
     if params[:flight_id] and params[:flight_id] != ''
-      @reservations = Reservation.where('flight_id = ?', "#{params[:flight_id]}")
+      @reservations = Reservation.where('flight_id = ?', "#{params[:flight_id]}").page(params[:page]).per(15)
     else
-      @reservations = Reservation.all
+      #@reservations = Reservation.all
+      @reservations = Reservation.page(params[:page]).per(15)
     end
   end
 
