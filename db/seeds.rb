@@ -6045,3 +6045,5 @@ end
 reservations_list.each do |flight_id, user_id|
   Reservation.create( flight_id: flight_id, user_id: user_id)
 end
+
+User.create(name: 'admin', email: 'admin@admin.pl', password_digest: 'admin', pesel: '1234567890', id_number:'A1A2A3A41', surname: 'admin', us_role: 2)
