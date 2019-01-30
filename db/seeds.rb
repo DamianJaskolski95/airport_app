@@ -6022,6 +6022,7 @@ reservations_list = [
   ['50','125'],
   ['36','49']
 ]
+=begin
 airports_list.each do |city, country|
   Airport.create( city: city, country: country )
 end
@@ -6039,11 +6040,11 @@ flights_list.each do |fl_date, airplane_id, airport_source_id, airport_dest_id, 
 end
 
 users_list.each do |name, email, password_digest, pesel, id_number, surname|
-  User.create( name: name, email: email, password_digest: password_digest, pesel: pesel, id_number: id_number, surname: surname)
+  User.create(name: name, email: email, password_digest: password_digest, pesel: pesel, id_number: id_number, surname: surname)
 end
 
 reservations_list.each do |flight_id, user_id|
   Reservation.create( flight_id: flight_id, user_id: user_id)
 end
-
+=end
 User.create(name: 'admin', email: 'admin@admin.pl', password_digest: 'admin', pesel: '1234567890', id_number:'A1A2A3A41', surname: 'admin', us_role: 2)
