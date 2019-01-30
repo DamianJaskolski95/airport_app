@@ -8,6 +8,6 @@ class Flight < ApplicationRecord
 
   has_many :reservations, dependent: :destroy
 
-  validates :date, presence: true,
+  validates :date, presence: true
 
 end
