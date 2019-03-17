@@ -1,6 +1,24 @@
-Simple RoR app for ticket reservation. This is for a project at PWR.
-Only admin panel implemented.
+# README
 
-To add admin account, edit "us_role" to 2 for any added accout.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-UPDATE Users SET us_role = 2 WHERE id = 1;
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
