@@ -5,3 +5,5 @@ To add admin account, edit "us_role" to 2 for any added accout.
 Example.
 UPDATE Users SET us_role = 2 WHERE id = 1;
 
+https://bloodtestpoorfront.herokuapp.com/login
+admin user: admin@admin.pl/admin
